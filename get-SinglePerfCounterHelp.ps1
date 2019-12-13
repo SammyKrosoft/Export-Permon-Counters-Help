@@ -84,7 +84,7 @@ Function Lines {
 <# -------------------------- EXECUTIONS -------------------------- #>
 cls
 # Call the static method to get the Help for the category
-$categoryHelp = [System.Diagnostics.PerformanceCounterCategory]::GetCategories() | ?{$_.CategoryName -like $categoryName} | select -expandproperty  CategoryHelp
+$categoryHelp = [System.Diagnostics.PerformanceCounterCategory]::GetCategories() | ?{$_.CategoryName -like $categoryName} | select -expandproperty CategoryHelp
 
 # Create an instance so that GetCounters() can be called
 $pcc = new-object System.Diagnostics.PerformanceCounterCategory($categoryName)
